@@ -18,7 +18,7 @@
 
 #include "constants.h"
 #include "utils.h"
-#include "CController.h"
+#include "CSomController.h"
 #include "resource.h"
 
 
@@ -30,7 +30,7 @@
 LPCSTR g_szApplicationName = "Kohonen Self Organizing Map Demo";
 LPCSTR g_szWindowClassName = "MyWindowClass";
 
-CController* g_Controller;
+CSomController* g_Controller;
 
 
 
@@ -94,7 +94,7 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
          ReleaseDC(hwnd, hdc);   
          
          //create the controller
-         g_Controller = new CController(cxClient,
+         g_Controller = new CSomController(cxClient,
                                         cyClient,
                                         constNumCellsAcross,
                                         constNumCellsDown,
@@ -120,7 +120,7 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
           {
            delete g_Controller;
 
-           g_Controller = new CController(cxClient,
+           g_Controller = new CSomController(cxClient,
                                         cyClient,
                                         constNumCellsAcross,
                                         constNumCellsDown,

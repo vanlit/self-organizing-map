@@ -1,7 +1,7 @@
-#include "Csom.h"
+#include "CSom.h"
 
 
-void Csom::Create(int cxClient,
+void CSom::Create(int cxClient,
                   int cyClient,
                   int CellsUp,
                   int CellsAcross,
@@ -32,12 +32,12 @@ void Csom::Create(int cxClient,
 
    //used in the calculation of the neighbourhood width of m_dInfluence
   m_dTimeConstant = m_iNumIterations/log(m_dMapRadius);
-}  
+}
 
 //---------------------------- Render ------------------------------------
 //
 //------------------------------------------------------------------------
-void Csom::Render(HDC surface)
+void CSom::Render(HDC surface)
 {
   //render all the cells
   for (int nd=0; nd<m_SOM.size(); ++nd)
@@ -54,13 +54,13 @@ void Csom::Render(HDC surface)
 
   s = "Press 'R' to retrain";
   TextOut(surface, 260, constWindowHeight - 40, s.c_str(), s.size());
-              
-      
+}
+
 //--------------------------- Epoch --------------------------------------
 //
 //  Given an input std::vector, runs the network through one training epoch
 //------------------------------------------------------------------------
-bool Csom::Epoch(const vector<vector<double> > &data)
+bool CSom::Epoch(const vector<vector<double> > &data)
 {
   if (data[0].size() != constSizeOfInputVector) {
     throw "the size of the input vector does not match the size of each node's weights vector";
@@ -136,7 +136,7 @@ bool Csom::Epoch(const vector<vector<double> > &data)
 //  and calculates the Euclidean distance between the vectors for each
 //  node. It returns a pointer to the best performer
 //------------------------------------------------------------------------
-CNode* Csom::FindBestMatchingNode(const vector<double> &vec)
+CNode* CSom::FindBestMatchingNode(const vector<double> &vec)
 {
   CNode* winner = NULL;
 

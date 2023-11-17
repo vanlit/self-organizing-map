@@ -1,10 +1,10 @@
-#include "CController.h"
+#include "CSomController.h"
 
 
 //---------------------------- Render ------------------------------------
 //
 //------------------------------------------------------------------------
-void CController::Render(HDC surface)
+void CSomController::Render(HDC surface)
 {
   m_pSOM->Render(surface);
 }
@@ -16,7 +16,7 @@ void CController::Render(HDC surface)
 //
 // trains the network given a std::vector of input vectors
 //------------------------------------------------------------------------
-bool CController::Epoch()
+bool CSomController::Epoch()
 {
   if (!m_pSOM->FinishedTraining())
   {
@@ -29,7 +29,7 @@ bool CController::Epoch()
 //-------------------------- CreateDataSet -------------------------------
 //
 //------------------------------------------------------------------------
-void CController::CreateDataSet()
+void CSomController::CreateDataSet()
 {
 
 #ifndef RANDOM_TRAINING_SETS

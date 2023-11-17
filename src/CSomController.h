@@ -18,17 +18,17 @@
 using namespace std;
 
 #include "CNode.h"
-#include "Csom.h"
+#include "CSom.h"
 #include "constants.h"
 
 
-class CController
+class CSomController
 {
 
 private:
 
   //pointer to a Self Organising Map
-  Csom*                   m_pSOM;
+  CSom*                   m_pSOM;
 
   //the data for the training
   vector<vector<double> > m_TrainingSet;
@@ -41,10 +41,10 @@ private:
 
 public:
 
-  CController(int cxClient, int cyClient, int CellsUp, int CellsAcross, int NumIterations)
+  CSomController(int cxClient, int cyClient, int CellsUp, int CellsAcross, int NumIterations)
   {
     //create the SOM
-    m_pSOM = new Csom();
+    m_pSOM = new CSom();
 
     m_pSOM->Create(cxClient, cyClient, CellsUp, CellsAcross, NumIterations);
 
@@ -52,7 +52,7 @@ public:
     this->CreateDataSet();
   }
       
-  ~CController()
+  ~CSomController()
   {
     delete m_pSOM;
   }

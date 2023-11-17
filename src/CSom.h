@@ -3,7 +3,7 @@
 
 //------------------------------------------------------------------------
 //
-//  Name:   Csom.h
+//  Name:   CSom.h
 //
 //  Desc:   class to define a Kohonen Self Organising Feature Map
 //
@@ -22,7 +22,7 @@ using namespace std;
 #include "constants.h"
 
 
-class Csom
+class CSom
 {
 
 private:
@@ -71,7 +71,7 @@ private:
 
 public:
 
-  Csom():m_dCellWidth(0),
+  CSom():m_dCellWidth(0),
          m_dCellHeight(0),
          m_pWinningNode(NULL),
          m_iIterationCount(1),
