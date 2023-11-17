@@ -16,8 +16,8 @@
             "src/*.cpp",
 
             "-o",
-            "built\\PROGRAM.exe",
-            "resources\\icon.res"
+            "built/PROGRAM.exe",
+            "resources/icon.res"
           ],
           "options": {
             "cwd": "${workspaceFolder}"
@@ -42,7 +42,6 @@
             "-o",
             "resources/icon.res"
           ],
-          
           
           "options": {
             "cwd": "${workspaceFolder}"
